@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Jiaoyang Ding - EdTech Researcher</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #fafaf9;
+            color: #1c1917;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        ::selection {
+            background-color: #1c1917;
+            color: #fafaf9;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-stone-900 selection:text-stone-50 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 mix-blend-difference text-stone-100 px-6 py-6 md:px-12 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tighter">JIAOYANG<span class="font-serif italic text-stone-400">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="about.html" class="hover:text-stone-400 transition-colors">About</a>
+                <a href="research.html" class="hover:text-stone-400 transition-colors">Research</a>
+                <a href="publications.html" class="hover:text-stone-400 transition-colors">Publications</a>
+                <a href="contact.html" class="hover:text-stone-400 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-stone-900 z-40 hidden" id="mobileMenu">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-stone-50">
+            <a href="index.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Home</a>
+            <a href="about.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">About</a>
+            <a href="research.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Research</a>
+            <a href="publications.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Publications</a>
+            <a href="contact.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Contact</a>
+            <button class="absolute top-6 right-6 text-3xl" id="closeMenu">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-stone-500 uppercase tracking-[0.2em] text-sm font-medium mb-6 reveal">Get in Touch</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight text-stone-900 mb-8 reveal">
+                Let's <span class="italic text-stone-500">connect</span> and collaborate.
+            </h1>
+            <p class="max-w-2xl text-lg text-stone-600 font-light leading-relaxed reveal">
+                Whether you're interested in research collaboration, speaking engagements, or simply want to discuss educational technology, I'd love to hear from you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Contact Form -->
+                <div class="reveal">
+                    <h2 class="font-serif text-3xl text-stone-900 mb-8">Send a Message</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-stone-700 mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-stone-100 border-0 rounded-xl focus:ring-2 focus:ring-stone-900 focus:bg-white transition-all" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-stone-700 mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-stone-100 border-0 rounded-xl focus:ring-2 focus:ring-stone-900 focus:bg-white transition-all" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-stone-700 mb-2">Subject</label>
+                            <select id="subject" name="subject" class="w-full px-4 py-3 bg-stone-100 border-0 rounded-xl focus:ring-2 focus:ring-stone-900 focus:bg-white transition-all">
+                                <option value="">Select a topic</option>
+                                <option value="collaboration">Research Collaboration</option>
+                                <option value="speaking">Speaking Engagement</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="student">Student Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-stone-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="6" class="w-full px-4 py-3 bg-stone-100 border-0 rounded-xl focus:ring-2 focus:ring-stone-900 focus:bg-white transition-all resize-none" placeholder="Tell me about your inquiry..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full md:w-auto inline-flex items-center justify-center px-8 py-4 bg-stone-900 text-stone-50 rounded-full text-sm font-medium hover:bg-stone-800 transition-all hover:scale-105 active:scale-95">
+                            Send Message
+                            <i class="ph ph-paper-plane-tilt ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="reveal">
+                    <h2 class="font-serif text-3xl text-stone-900 mb-8">Contact Information</h2>
+                    
+                    <div class="space-y-8">
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="ph ph-envelope text-2xl text-stone-900"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-stone-900 mb-1">Email</h3>
+                                <a href="mailto:djiaoyang@eduhk.hk" class="text-stone-600 hover:text-stone-900 transition-colors">djiaoyang@eduhk.hk</a>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="ph ph-map-pin text-2xl text-stone-900"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-stone-900 mb-1">Location</h3>
+                                <p class="text-stone-600">The Education University of Hong Kong<br>10 Lo Ping Road, Tai Po<br>New Territories, Hong Kong</p>
+                            </div>
+                        </div>
+
+                        <!-- Office -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="ph ph-building text-2xl text-stone-900"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-stone-900 mb-1">Office</h3>
+                                <p class="text-stone-600">Centre for Learning, Teaching and Technology (LTTC)<br>The Education University of Hong Kong</p>
+                            </div>
+                        </div>
+
+                        <!-- Office Hours -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="ph ph-clock text-2xl text-stone-900"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-stone-900 mb-1">Office Hours</h3>
+                                <p class="text-stone-600">Monday - Friday: 9:00 AM - 6:00 PM (HKT)<br>Saturday - Sunday: By appointment</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="mt-12 pt-8 border-t border-stone-200">
+                        <h3 class="font-medium text-stone-900 mb-4">Connect Online</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://orcid.org/0009-0004-6760-3102" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-stone-100 text-stone-900 rounded-full text-sm font-medium hover:bg-stone-200 transition-colors">
+                                <i class="ph ph-link"></i> ORCID
+                            </a>
+                            <a href="#" class="inline-flex items-center gap-2 px-5 py-3 bg-stone-100 text-stone-900 rounded-full text-sm font-medium hover:bg-stone-200 transition-colors">
+                                <i class="ph ph-link"></i> Scopus
+                            </a>
+                            <a href="#" class="inline-flex items-center gap-2 px-5 py-3 bg-stone-100 text-stone-900 rounded-full text-sm font-medium hover:bg-stone-200 transition-colors">
+                                <i class="ph ph-linkedin-logo"></i> LinkedIn
+                            </a>
+                            <a href="#" class="inline-flex items-center gap-2 px-5 py-3 bg-stone-100 text-stone-900 rounded-full text-sm font-medium hover:bg-stone-200 transition-colors">
+                                <i class="ph ph-graduation-cap"></i> Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 px-6 md:px-12 bg-stone-100">
+        <div class="max-w-7xl mx-auto reveal">
+            <h2 class="font-serif text-3xl text-stone-900 mb-8">Find Me</h2>
+            <div class="aspect-video bg-stone-200 rounded-2xl overflow-hidden">
+                <!-- Embedded map placeholder - In production, replace with actual Google Maps embed -->
+                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-stone-200 to-stone-300">
+                    <div class="text-center">
+                        <i class="ph ph-map-trifold text-6xl text-stone-400 mb-4"></i>
+                        <p class="text-stone-500">Interactive map would be displayed here</p>
+                        <a href="https://maps.google.com/?q=The+Education+University+of+Hong+Kong" target="_blank" class="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-stone-900 text-stone-50 rounded-full text-sm font-medium hover:bg-stone-800 transition-colors">
+                            <i class="ph ph-map-pin"></i> Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 px-6 md:px-12">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-serif text-4xl text-stone-900 mb-12 text-center reveal">Frequently Asked Questions</h2>
+            
+            <div class="space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="reveal bg-stone-100 rounded-2xl p-6">
+                    <h3 class="font-medium text-stone-900 mb-2 flex items-center gap-2">
+                        <i class="ph ph-question text-xl"></i>
+                        Are you available for research collaboration?
+                    </h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        Yes, I'm always interested in collaborating on research projects related to educational technology, AI in education, immersive learning environments, and related fields. Please reach out via email with your collaboration proposal.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="reveal bg-stone-100 rounded-2xl p-6">
+                    <h3 class="font-medium text-stone-900 mb-2 flex items-center gap-2">
+                        <i class="ph ph-question text-xl"></i>
+                        Do you accept PhD students?
+                    </h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        I occasionally co-supervise PhD students in areas related to my research expertise. If you're interested in pursuing doctoral research in EdTech, please send your CV and research proposal to discuss potential opportunities.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="reveal bg-stone-100 rounded-2xl p-6">
+                    <h3 class="font-medium text-stone-900 mb-2 flex items-center gap-2">
+                        <i class="ph ph-question text-xl"></i>
+                        Can I invite you to speak at an event?
+                    </h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        I'm happy to consider speaking invitations for conferences, workshops, and seminars related to educational technology and AI in education. Please provide details about the event, audience, and topic in your inquiry.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="reveal bg-stone-100 rounded-2xl p-6">
+                    <h3 class="font-medium text-stone-900 mb-2 flex items-center gap-2">
+                        <i class="ph ph-question text-xl"></i>
+                        How long does it take to respond to inquiries?
+                    </h3>
+                    <p class="text-stone-600 leading-relaxed">
+                        I typically respond to emails within 2-3 business days during the academic term. During busy periods or holidays, responses may take slightly longer. Thank you for your patience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 md:px-12 bg-stone-900 text-stone-50 rounded-t-[3rem]">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <i class="ph ph-envelope-simple text-5xl text-stone-400 mb-6"></i>
+            <h2 class="font-serif text-3xl md:text-5xl mb-6">Ready to Start a Conversation?</h2>
+            <p class="text-stone-400 text-lg mb-8 max-w-2xl mx-auto">
+                I look forward to connecting with fellow researchers, educators, and anyone passionate about educational technology.
+            </p>
+            <a href="mailto:djiaoyang@eduhk.hk" class="inline-flex items-center justify-center px-8 py-4 bg-stone-50 text-stone-900 rounded-full text-sm font-medium hover:bg-stone-200 transition-all hover:scale-105 active:scale-95">
+                <i class="ph ph-envelope mr-2"></i> Email Me Directly
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="py-16 px-6 md:px-12 bg-stone-900 text-stone-50 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex gap-6">
+                <a href="https://orcid.org/0009-0004-6760-3102" target="_blank" class="text-stone-400 hover:text-white transition-colors text-sm font-medium tracking-wide">ORCID</a>
+                <a href="#" class="text-stone-400 hover:text-white transition-colors text-sm font-medium tracking-wide">Scopus</a>
+                <a href="#" class="text-stone-400 hover:text-white transition-colors"><i class="ph ph-linkedin-logo text-2xl"></i></a>
+            </div>
+            <p class="text-stone-500 text-sm">© 2026 Jiaoyang Ding. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => revealOnScroll.observe(el));
+
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-4');
+                    navbar.classList.remove('py-6');
+                } else {
+                    navbar.classList.add('py-6');
+                    navbar.classList.remove('py-4');
+                }
+            });
+
+            const menuBtn = document.getElementById('menuBtn');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            menuBtn?.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+            closeMenu?.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>

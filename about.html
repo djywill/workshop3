@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Jiaoyang Ding - EdTech Researcher</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #fafaf9;
+            color: #1c1917;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        ::selection {
+            background-color: #1c1917;
+            color: #fafaf9;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-stone-900 selection:text-stone-50 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 mix-blend-difference text-stone-100 px-6 py-6 md:px-12 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tighter">JIAOYANG<span class="font-serif italic text-stone-400">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="about.html" class="hover:text-stone-400 transition-colors">About</a>
+                <a href="research.html" class="hover:text-stone-400 transition-colors">Research</a>
+                <a href="publications.html" class="hover:text-stone-400 transition-colors">Publications</a>
+                <a href="contact.html" class="hover:text-stone-400 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-stone-900 z-40 hidden" id="mobileMenu">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-stone-50">
+            <a href="index.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Home</a>
+            <a href="about.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">About</a>
+            <a href="research.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Research</a>
+            <a href="publications.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Publications</a>
+            <a href="contact.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Contact</a>
+            <button class="absolute top-6 right-6 text-3xl" id="closeMenu">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-stone-500 uppercase tracking-[0.2em] text-sm font-medium mb-6 reveal">About Me</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight text-stone-900 mb-8 reveal">
+                Passionate about <span class="italic text-stone-500">transforming</span> education through technology.
+            </h1>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+                
+                <!-- Image Column -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="aspect-[3/4] overflow-hidden rounded-2xl relative sticky top-32">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop" alt="Abstract representation" class="object-cover w-full h-full">
+                    </div>
+                </div>
+                
+                <!-- Content Column -->
+                <div class="lg:col-span-7 space-y-16">
+                    
+                    <!-- Bio Section -->
+                    <div class="reveal">
+                        <h2 class="font-serif text-3xl text-stone-900 mb-6">Biography</h2>
+                        <div class="space-y-4 text-lg text-stone-600 font-light leading-relaxed">
+                            <p>
+                                I am currently an Educational Development Officer at the Centre for Learning, Teaching and Technology, the Education University of Hong Kong. With over a decade of experience in educational technology, I have dedicated my career to exploring how emerging technologies can transform learning experiences.
+                            </p>
+                            <p>
+                                My journey in EdTech began with a deep curiosity about how technology could bridge gaps in traditional education. This curiosity led me to pursue advanced studies in AI and Educational Technology, where I developed a strong foundation in both theoretical frameworks and practical applications.
+                            </p>
+                            <p>
+                                Today, I focus on leveraging generative AI, VR/AR, and robotics as scaffolds to enhance students' performance and engagement. I believe that technology should not replace traditional teaching but augment it, creating hybrid learning environments that prepare students for the future.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Education Section -->
+                    <div class="reveal">
+                        <h2 class="font-serif text-3xl text-stone-900 mb-6">Education</h2>
+                        <div class="space-y-6">
+                            <div class="border-l-2 border-stone-300 pl-6 hover:border-stone-900 transition-colors">
+                                <p class="text-sm text-stone-500 uppercase tracking-widest mb-1">In Progress</p>
+                                <h3 class="text-xl font-medium text-stone-900">Doctor of Education (Ed.D)</h3>
+                                <p class="text-stone-600">The Education University of Hong Kong</p>
+                                <p class="text-stone-500 text-sm mt-1">Focus: Educational Technology & AI-enhanced Learning</p>
+                            </div>
+                            <div class="border-l-2 border-stone-300 pl-6 hover:border-stone-900 transition-colors">
+                                <h3 class="text-xl font-medium text-stone-900">Master of Science in AI & Educational Technology</h3>
+                                <p class="text-stone-600">The Education University of Hong Kong</p>
+                                <p class="text-stone-500 text-sm mt-1">Specialized in AI applications for education</p>
+                            </div>
+                            <div class="border-l-2 border-stone-300 pl-6 hover:border-stone-900 transition-colors">
+                                <h3 class="text-xl font-medium text-stone-900">Bachelor of Engineering</h3>
+                                <p class="text-stone-600">Beijing Normal University, Zhuhai</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="reveal">
+                        <h2 class="font-serif text-3xl text-stone-900 mb-6">Skills & Expertise</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-stone-100 p-6 rounded-2xl">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i class="ph ph-brain text-2xl text-stone-900"></i>
+                                    <h3 class="font-medium text-stone-900">Generative AI & LLMs</h3>
+                                </div>
+                                <p class="text-stone-600 text-sm leading-relaxed">
+                                    Deploying generative AI algorithms for educational applications, including chatbots, content generation, and personalized learning systems.
+                                </p>
+                            </div>
+                            <div class="bg-stone-100 p-6 rounded-2xl">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i class="ph ph-virtual-reality text-2xl text-stone-900"></i>
+                                    <h3 class="font-medium text-stone-900">VR/AR & Metaverse</h3>
+                                </div>
+                                <p class="text-stone-600 text-sm leading-relaxed">
+                                    Constructing immersive learning environments using virtual and augmented reality technologies for enhanced engagement.
+                                </p>
+                            </div>
+                            <div class="bg-stone-100 p-6 rounded-2xl">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i class="ph ph-robot text-2xl text-stone-900"></i>
+                                    <h3 class="font-medium text-stone-900">Robotics Technology</h3>
+                                </div>
+                                <p class="text-stone-600 text-sm leading-relaxed">
+                                    Implementing educational robotics programs and developing interactive learning experiences with physical computing.
+                                </p>
+                            </div>
+                            <div class="bg-stone-100 p-6 rounded-2xl">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i class="ph ph-monitor-play text-2xl text-stone-900"></i>
+                                    <h3 class="font-medium text-stone-900">Computer Graphics</h3>
+                                </div>
+                                <p class="text-stone-600 text-sm leading-relaxed">
+                                    Creating visual content and interactive graphics for educational materials and immersive environments.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teaching Section -->
+                    <div class="reveal">
+                        <h2 class="font-serif text-3xl text-stone-900 mb-6">Teaching & Training</h2>
+                        <div class="space-y-4 text-stone-600 leading-relaxed">
+                            <p>
+                                I deliver AI and digital competency education to educators and students, helping them navigate the rapidly evolving technological landscape. My training programs focus on:
+                            </p>
+                            <ul class="list-none space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <i class="ph ph-check-circle text-green-600 text-xl mt-0.5"></i>
+                                    <span>Practical applications of generative AI in education</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="ph ph-check-circle text-green-600 text-xl mt-0.5"></i>
+                                    <span>Designing immersive learning experiences</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="ph ph-check-circle text-green-600 text-xl mt-0.5"></i>
+                                    <span>Integrating technology into curriculum design</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="ph ph-check-circle text-green-600 text-xl mt-0.5"></i>
+                                    <span>Digital literacy and AI ethics</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-24 px-6 md:px-12 bg-stone-100">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <i class="ph ph-quotes text-4xl text-stone-300 mb-6"></i>
+            <blockquote class="font-serif text-2xl md:text-4xl text-stone-900 leading-snug mb-6">
+                "Technology is not just a tool, it's a bridge to new possibilities in learning."
+            </blockquote>
+            <p class="text-stone-500 font-medium">— My Teaching Philosophy</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="py-16 px-6 md:px-12 bg-stone-900 text-stone-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex gap-6">
+                <a href="https://orcid.org/0009-0004-6760-3102" target="_blank" class="text-stone-400 hover:text-white transition-colors text-sm font-medium tracking-wide">ORCID</a>
+                <a href="#" class="text-stone-400 hover:text-white transition-colors text-sm font-medium tracking-wide">Scopus</a>
+                <a href="#" class="text-stone-400 hover:text-white transition-colors"><i class="ph ph-linkedin-logo text-2xl"></i></a>
+            </div>
+            <p class="text-stone-500 text-sm">© 2026 Jiaoyang Ding. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => revealOnScroll.observe(el));
+
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-4');
+                    navbar.classList.remove('py-6');
+                } else {
+                    navbar.classList.add('py-6');
+                    navbar.classList.remove('py-4');
+                }
+            });
+
+            const menuBtn = document.getElementById('menuBtn');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            menuBtn?.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+            closeMenu?.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
